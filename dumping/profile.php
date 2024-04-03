@@ -43,7 +43,7 @@
 	<!-- //main -->
 	<!-- copyright -->
 	<div class="copyright agileinfo">
-		<p>© 2020 Profile Subscribe Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
+		<p>© 2024 Profile Subscribe Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
 	</div>
 	<!-- //copyright -->
 </body>

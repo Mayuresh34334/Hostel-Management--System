@@ -55,7 +55,7 @@
         <p class=" w3l-register-p">Don't have an account?<a href="signup.php" class="register"> Sign up</a></p>
     </div>
     <footer>
-        <p class="copyright-agileinfo"> &copy; 2020 DBMS Project. All Rights Reserved</p>
+        <p class="copyright-agileinfo"> &copy; 2024 SE Project. All Rights Reserved</p>
     </footer>
 
 </body>

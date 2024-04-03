@@ -86,7 +86,7 @@
                 <label>Password:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    <input type="password" class="form-control" name="pwd" placeholder="Password" required="required" https://github.com/veenanitk/DBMS-Project.git/>
+                    <input type="password" class="form-control" name="pwd" placeholder="Password" required="required" >
                 </div>
             </div>
 
