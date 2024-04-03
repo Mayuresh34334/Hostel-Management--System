@@ -22,6 +22,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
+
+
 <script type="application/x-javascript">
 	addEventListener("load", function () {
 		setTimeout(hideURLbar, 0);
@@ -31,6 +33,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		window.scrollTo(0, 1);
 	}
 </script>
+
+
+
+<style>
+
+</style>
 <!--// Meta tag Keywords -->
 
 <link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">
@@ -155,10 +163,87 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li>: <?php echo $_SESSION['year_of_study']; ?></li>
 										</ul>
 									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>CGPA </b></li>
+											<li>: <?php echo $_SESSION['cgpa']; ?></li>
+										</ul>
+									</li>
 								</ul>
+								
 							</div>
+								
 								<div class="clear"></div>
-						</div>
+						</div>	
+						
+							<button id="update" onclick="openModal(event)">Update</button>
+							<div id="update-modal">
+								<div class="modal">
+									<div class="top-form">
+										<div class="close-modal" onclick="closeModal()">
+											&#10006;
+										</div>
+									</div>
+									<div class="update-form">
+										<h2>Update CGPA and Year of Study</h2>
+										<form action="">
+											<input type="text" class="update-control" placeholder="CGPA">
+											<input type="text" class="update-control" placeholder="year_of_study">
+											<button type="button" class="submit-btn" >Submit</button>
+										</form>
+									</div>	
+								</div>
+							</div>
+
+							<script type="text/javascript">
+								$(function(){
+									$('#update').click(function(){
+										$('#update-modal').fadeIn().css("display", "flex");
+									});
+
+									$('.close-modal').click(function(){
+										$('#update-modal').fadeOut();
+									});
+								});
+
+								function openModal(event) {
+									event.preventDefault();
+									document.getElementById('update-modal').style.display = 'flex';
+								}
+
+								function closeModal() {
+									document.getElementById('update-modal').style.display = 'none';
+								}
+
+								$(function() {
+									$('#submit-btn').click(function() {
+										var cgpa = $('#cgpa').val();
+										var yearOfStudy = $('#year_of_study').val();
+										
+										// Send data to the server using AJAX
+										$.ajax({
+											type: 'POST',
+											url: '../include/update_student.php', 
+											data: {
+												cgpa: cgpa,
+												year_of_study: yearOfStudy
+											},
+											success: function(response) {
+												// Handle success response here (if needed)
+												console.log(response); // Log the response to the console
+											},
+											error: function(xhr, status, error) {
+												// Handle error here (if needed)
+												console.error(xhr.responseText); // Log the error to the console
+											}
+										});
+									});
+								});
+
+							</script>
+						
+						
+
 				</fieldset>
 				<fieldset class="step agileinfo w3ls_fancy_step">
 					<legend>Hostel Info</legend>

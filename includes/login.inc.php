@@ -33,6 +33,7 @@ if (isset($_POST['login-submit'])) {
         $_SESSION['year_of_study'] = $row['Year_of_study'];
         $_SESSION['hostel_id'] = $row['Hostel_id'];
         $_SESSION['room_id'] = $row['Room_id'];
+        $_SESSION['cgpa'] = $row['CGPA'];
 
         echo"<script>window.location='../home.php'</script>";
       }

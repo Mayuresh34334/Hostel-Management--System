@@ -73,6 +73,13 @@
                     <input type="text" class="form-control" name="year_of_study" placeholder="Year of Study" required="required" />
                 </div>
             </div>
+            <div class=" w3l-form-group">
+                <label>CURRENT CGPA</label>
+                <div class="group">
+                    <i class="fas fa-calendar"></i>
+                    <input type="text" class="form-control" name="cgpa" placeholder="CGPA" required="required" />
+                </div>
+            </div>
 
           <!--  <div class=" w3l-form-group">
                 <label>Email:</label>
@@ -106,7 +113,7 @@
         <p class=" w3l-register-p">Already a member?<a href="index.php" class="register"> Login</a></p>
     </div>
     <footer>
-        <p class="copyright-agileinfo"> &copy; 2020 DBMS Project. All Rights Reserved </p>
+        <p class="copyright-agileinfo"> &copy; 2024 SE Project. All Rights Reserved </p>
     </footer>
 
 </body>
