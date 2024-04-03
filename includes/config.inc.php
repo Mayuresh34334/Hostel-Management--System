@@ -3,7 +3,7 @@
 		session_start();
 	}
   
- $conn=mysqli_connect("localhost","root","","hostel_management_system",3308);
+ $conn=mysqli_connect("localhost","root","Na@9119553127","hostel_management_system");
 
   if (!$conn) {
     die("Connection Failed: ".mysqli_connect_error());
