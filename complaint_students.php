@@ -52,7 +52,7 @@ require 'includes/config.inc.php'; // Include database configuration file
         height: 150px;
     }
     input[type="submit"] {
-        background-color: #007bff;
+        background-color: #ff000f;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -61,7 +61,7 @@ require 'includes/config.inc.php'; // Include database configuration file
         font-size: 16px;
     }
     input[type="submit"]:hover {
-        background-color: #0056b3;
+        background-color: black;
     }
 </style>
 <link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">

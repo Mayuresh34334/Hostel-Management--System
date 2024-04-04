@@ -97,8 +97,24 @@ session_start();
 							</li>
 						</ul>
 					</li>
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link" href="complaints_manager.php">Complaints</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="visitors_manager.php">Visitors</a>
+					</li> -->
+                    <li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Work
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="complaints_manager.php">Complaints</a>
+							</li>
+							<li>
+								<a href="visitors_manager.php">Visitors</a>
+							</li>
+						</ul>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
