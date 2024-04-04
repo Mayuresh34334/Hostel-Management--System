@@ -50,7 +50,7 @@ session_start();
 <!--Header-->
 <header>
 	<div class="container agile-banner_nav">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:105%;">
 
 			<h1><a class="navbar-brand" href="home_manager.php">COEP <span class="display"></span></a></h1>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,6 +83,7 @@ session_start();
 							</li>
 						</ul>
 					</li>
+					
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Mess
 							<b class="caret"></b>
@@ -95,6 +96,9 @@ session_start();
 								<a href="vacate_mess.php">Vacate Mess</a>
 							</li>
 						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="complaints_manager.php">Complaints</a>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>

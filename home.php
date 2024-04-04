@@ -69,6 +69,9 @@ session_start();
 					<li class="nav-item">
 						<a class="nav-link" href="payment_form.php">Payment</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="complaint_students.php">Complaints</a>
+					</li>
 					
 						<li class="nav-ite">
 							<a class="nav-link" href="services_mess.php">Mess</a>
