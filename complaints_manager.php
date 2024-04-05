@@ -10,13 +10,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
-
-<!-- css files -->
-<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
-<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
-<!-- //css files -->
-
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -32,7 +25,7 @@
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         position: relative;
-        top:130px;
+        top: 130px;
     }
     h2 {
         text-align: center;
@@ -70,12 +63,13 @@
 <link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 <!-- //css files -->
 
+
 </head>
 <body>
 
 <header>
 	<div class="container agile-banner_nav">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:108%;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:105%;">
 
 			<h1><a class="navbar-brand" href="home_manager.php">COEP <span class="display"></span></a></h1>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

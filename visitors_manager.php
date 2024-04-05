@@ -7,10 +7,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['grantPermission'])) {
     $requestId = $_POST['requestId'];
     
     // Update the status of the request to "Accepted"
-    $stmt = $conn->prepare("UPDATE Visitor_Request SET Status = 'Accepted' WHERE Request_id = ?");
-    $stmt->bind_param("i", $requestId);
-    $stmt->execute();
-    $stmt->close();
+    // $stmt = $conn->prepare("UPDATE visitor_request SET Status = 'Accepted' WHERE Request_id = ?");
+    // $stmt->bind_param("i", $requestId);
+    // $stmt->execute();
+    // $stmt->close();
+
+    // Define your SQL query
+        $query = "UPDATE visitor_request SET Status = 'Approved' WHERE Request_id = $requestId";
+
+        // Execute the query
+        if ($conn->query($query) === TRUE) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . $conn->error;
+        }
 }
 
 // Fetch visitor requests
@@ -199,13 +209,16 @@ $result = $conn->query($query);
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['grantPermission'])) {
                     $requestId = $_POST['requestId'];
                     
-                    // Update the status of the request to "Accepted"
-                    $stmt = $conn->prepare("UPDATE Visitor_Request SET Status = 'Accepted' WHERE Request_id = ?");
-                    $stmt->bind_param("i", $requestId);
-                    $stmt->execute();
-                    $stmt->close();
+                    $query = "UPDATE visitors SET status = 'Approved'";
+    
+                    // Execute the query
+                    if ($conn->query($query) === TRUE) {
+                        echo "Status updated successfully";
+                    } else {
+                        echo "Error updating status: " . $conn->error;
+                    }   
+                
                 }
-
                 // Fetch visitor requests
                 $query = "SELECT * FROM Visitor_Request";
                 $result = $conn->query($query);
