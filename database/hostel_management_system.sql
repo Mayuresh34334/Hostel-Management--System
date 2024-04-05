@@ -466,4 +466,33 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+CREATE TABLE `Complaints` (
+  `Complaint_id` int(100) NOT NULL AUTO_INCREMENT,
+  `Student_id` varchar(255) NOT NULL,
+  `Hostel_id` int(10) NOT NULL,
+  `Room_No` int(10) DEFAULT NULL,
+  `Message` varchar(255) DEFAULT NULL,
+  `Status` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`Complaint_id`),
+  KEY `Student_id` (`Student_id`),
+  KEY `Hostel_id` (`Hostel_id`),
+  CONSTRAINT `Complaints_ibfk_1` FOREIGN KEY (`Student_id`) REFERENCES `Student` (`Student_id`),
+  CONSTRAINT `Complaints_ibfk_2` FOREIGN KEY (`Hostel_id`) REFERENCES `Hostel` (`Hostel_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `Visitor_Request` (
+  `Request_id` INT(100) NOT NULL AUTO_INCREMENT,
+  `Student_id` VARCHAR(255) NOT NULL,
+  `Visitor_name` VARCHAR(255) NOT NULL,
+  `Visitor_contact` VARCHAR(255) NOT NULL,
+  `Purpose` VARCHAR(255) NOT NULL,
+  `Status` ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
+  PRIMARY KEY (`Request_id`),
+  KEY `Student_id` (`Student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
 -- Dump completed on 2020-06-07 15:04:56
