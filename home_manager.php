@@ -114,6 +114,9 @@ session_start();
 							<li>
 								<a href="visitors_manager.php">Visitors</a>
 							</li>
+							<li>
+								<a href="manager_room_rating.php">Give Rating</a>
+							</li>
 						</ul>
 					</li>
 					<li class="dropdown nav-item">

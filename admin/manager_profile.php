@@ -145,17 +145,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="abt-agile-right">
 								<?php
 										$Man_id = $_SESSION['hostel_man_id'];
-										$query1 = "SELECT * FROM Hostel_Manager_Profile WHERE Hostel_man_id = '$Man_id'";
+										$query1 = "SELECT * FROM Hostel_Manager WHERE Hostel_man_id = '$Man_id'";
 										$result = mysqli_query($conn,$query1);
 										$row = mysqli_fetch_assoc($result);
 										$Fname = $row['Fname'];
 										$Lname = $row['Lname'];
 										$Uname = $row['Username'];
 										$Mob = $row['Mob_no'];
-										$Hostel_name=$row['Hostel_name'];
-										$Mess_name=$row['Mess_name'];
-										$Hostel_Occupancy=$row['Hostel_Occupancy'];
-										$Mess_Occupancy=$row['Mess_Occupancy'];
+										$Hostel_name=$row['Hostel_id'];
+										$Mess_name=$row['Mess_id'];
 								?>
 
 								<h3><?php echo $Fname." ".$Lname; ?></h3>
@@ -184,7 +182,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><b>Managing Mess </b></li>
 											<li>: <?php echo $Mess_name; ?></li>
 										</ul>	
-									</li>
+									<!-- </li>
 									<li>
 										<ul class="address-text">
 										<li><b>Hostel Occupancy </b></li>
@@ -196,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><b>Mess Occupancy </b></li>
 											<li>: <?php echo $Mess_Occupancy. '%'; ?></li>
 										</ul>	
-									</li>
+									</li> -->
 								</ul>
 							</div>
 								<div class="clear"></div>

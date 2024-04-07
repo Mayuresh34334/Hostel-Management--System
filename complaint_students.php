@@ -137,53 +137,35 @@ require 'includes/config.inc.php'; // Include database configuration file
 
         <input type="submit" value="Submit">
     </form>
+    <?php
+        // PHP backend processing
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Retrieve form data and sanitize
+            $studentId = $_POST["studentId"];
+            $roomNo = $_POST["roomNo"];
+            $hostelBlock = $_POST["hostelBlock"];
+            $complaint = $_POST["complaint"];
+
+            
+            // Prepare and execute the SQL statement to insert complaint
+            $sql = "INSERT INTO Complaints (Student_id, Room_No, Hostel_id, Message) VALUES ('$studentId', '$roomNo', '$hostelBlock', '$complaint')";
+            $result = mysqli_query($conn, $sql);
+            
+            // Check if the insertion was successful
+            if (mysqli_query($conn, $sql)) {
+                echo "<script>alert('Complaint submitted successfully.');</script>";
+            } else {
+                echo "<script>alert('Error submitting complaint: " . mysqli_error($conn) . "');</script>";
+            }
+        }
+    ?>
 </div>
 
-<script>
-    // JavaScript validation
-    document.getElementById("complaintForm").addEventListener("submit", function(event) {
-        var studentId = document.getElementById("studentId").value;
-        var roomNo = document.getElementById("roomNo").value;
-        var hostelBlock = document.getElementById("hostelBlock").value;
-        var complaint = document.getElementById("complaint").value;
-        
-        if (studentId.trim() === "" || roomNo.trim() === "" || hostelBlock.trim() === "" || complaint.trim() === "") {
-            alert("Please fill in all fields.");
-            event.preventDefault();
-        }
-    });
-</script>
 
 
 
-<?php
-// PHP backend processing
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $studentId = sanitizeInput($_POST["studentId"]);
-    $roomNo = sanitizeInput($_POST["roomNo"]);
-    $hostelBlock = sanitizeInput($_POST["hostelBlock"]);
-    $complaint = sanitizeInput($_POST["complaint"]);
-    
-    // Prepare and execute the SQL statement to insert complaint
-    $sql = "INSERT INTO Complaints (Student_id, Room_No, Hostel_id, Message) VALUES ($studentId, $roomNo, $hostelBlock, $complaint)";
-    $result = mysqli_query($conn,$sql);
-    
-    // Check if the insertion was successful
-    if ($result) {
-        echo "<script>alert('Complaint submitted successfully.');</script>";
-    } else {
-        echo "<script>alert('Error submitting complaint: " . mysqli_error($conn) . "');</script>";
-    }
-}
 
-// Function to sanitize input data
-function sanitizeInput($data) {
-    global $conn; // Access the database connection variable
-    $data = mysqli_real_escape_string($conn, $data);
-    return $data;
-}
-?>
+
 
 </body>
 </html>

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel</title>
+<title>Complaints</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -162,11 +162,11 @@
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
-                    echo "<td>" . $row['student_id'] . "</td>";
-                    echo "<td>" . $row['room_no'] . "</td>";
-                    echo "<td>" . $row['hostel_block'] . "</td>";
-                    echo "<td>" . $row['complaint'] . "</td>";
-                    echo "<td><button class='remove-button' onclick='removeComplaint(" . $row['id'] . ")'>Remove</button></td>";
+                    echo "<td>" . $row['Student_id'] . "</td>";
+                    echo "<td>" . $row['Room_No'] . "</td>";
+                    echo "<td>" . $row['Hostel_id'] . "</td>";
+                    echo "<td>" . $row['Message'] . "</td>";
+                    echo "<td><button class='remove-button' onclick='removeComplaint(" . $row['Complaint_id'] . ")'>Remove</button></td>";
                     echo "</tr>";
                 }
             } else {
