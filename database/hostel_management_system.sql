@@ -492,6 +492,16 @@ CREATE TABLE `Visitor_Request` (
   KEY `Student_id` (`Student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE RoomRatings (
+    RatingID INT PRIMARY KEY AUTO_INCREMENT,
+    RoomID INT,
+    Hostel_block VARCHAR(255), -- Added field
+    NeatnessRating INT,
+    CleanlinessRating INT,
+    MaintenanceRating INT,
+    RatingDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (RoomID) REFERENCES Room(Room_id)
+);
 
 
 
